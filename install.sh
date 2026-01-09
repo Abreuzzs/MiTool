@@ -24,11 +24,6 @@ run_step() {
 
 echo
 
-if [ ! -d "$HOME/storage" ]; then
-    echo -e "\nGrant permission: termux-setup-storage\nThen rerun the command.\n"
-    exit 1
-fi
-
 if ! cmd package list packages --user 0 com.termux.api < /dev/null 2>/dev/null | grep -q 'com.termux.api'; then
     echo
     echo 'com.termux.api app is not installed'
